@@ -1,56 +1,56 @@
-function CalcularPromedio(){
-    let v1 = document.getElementById("n1").value;
-    let v2 = document.getElementById("n2").value;
-    let v3 = document.getElementById("n3").value;
-    let pro = (parseFloat(v1)+parseFloat(v2)+parseFloat(v3))/3;
-    document.getElementById("promedio").innerHTML = pro;
+let comidas = prompt("Ingrese que quiere comer: ");
+switch (comidas) {
+    case "hamburgesa":console.log(alert("La hamburgesa doble con cheddar cuesta $1500"));
+                break;
+    case "pizza":console.log(alert("Las pizzas de cualquier tipo cuestan $1300"));
+    break;
+    case "lomito":console.log(alert("El Lomito completo cuesta $1600"));
+    break;
+    case "papas fritas": console.log(alert("La porción de fritas cuestan $600"));
+    break;
+    case "chocotorta":console.log(alert("La porción de chocotorta cuesta $500"));
+    break;
+    default:console.log(alert("Por el momento no trabajamos con " + comidas +" como producto"));
+        break;
 }
 
-let nombre = "Papas fritas"
-let cantidad = 1
 
-let precioProducto
-
-
-
-if(nombre == "Papas fritas"){
-    precioProducto = 400
-    let precioTotal = cantidad * precioProducto
-    console.log("Tiene que pagar " + precioTotal + " Pesos")
-}else if(nombre == "Pizza"){
-    precioProducto = 250
-    let precioTotal = cantidad * precioProducto
-    console.log("Tiene que pagar " + precioTotal + " Pesos")
-}else if(nombre == "Chocotorta"){
-    precioProducto = 450
-    let precioTotal = cantidad * precioProducto
-    console.log("Tiene que pagar " + precioTotal + " Pesos")
+class Bebida{
+    constructor(nombre, cantidad){
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+    }
 }
-else if(nombre == "Hamburgesa doble"){
-    precioProducto = 1200
-    let precioTotal = cantidad * precioProducto
-    console.log("Tiene que pagar " + precioTotal + " Pesos")
-}
-else if(nombre == "Lomito completo"){
-    precioProducto = 1500
-    let precioTotal = cantidad * precioProducto
-    console.log("Tiene que pagar " + precioTotal + " Pesos")
-}else if(nombre == "Empanadas"){
-    precioProducto = 150
-    let precioTotal = cantidad * precioProducto
-    console.log("Tiene que pagar " + precioTotal + " Pesos")
-}
-else{
-    console.log("Producto no disponible/válido")
+const listaDeBebidasEncargadas = [];
+let opcion = prompt("Quiere comprar algo para tomar? en caso contrario escriba NO para salir");
+
+while(opcion != "NO"){
+    const nombre = prompt("Ingrese nombre");
+    
+    const cantidad = parseInt(prompt("Ingrese el stock"));
+    
+    const bebida = new Bebida(nombre, cantidad);
+    
+    listaDeBebidasEncargadas.push(Bebida);
+    opcion = prompt("Ingrese otra Bebida o NO para salir");
 }
 
-let cantidadDeProductos = Number(prompt("Ingrese la cantidad de productos"))
+console.log(alert("Las bebidas cuestan $300") + listaDeBebidasEncargadas);
 
-let acumulador = 0
-
-for(let i = 0; i < cantidadDeProductos; i++){
-    let productoA = Number(prompt("Ingrese el valor del producto"))
-    acumulador = acumulador + productoA
+let precioBebidas = 300;
+if(comidas == "hamburgesa"){
+    let totalAPagar = precioBebidas + 1500;
+    console.log(alert("El total a pagar con la bebida es: $"+totalAPagar+"."))
+}else if(comidas == "pizza"){
+    let totalAPagar = precioBebidas + 1300;
+    console.log(alert("El total a pagar con la bebida es: $"+totalAPagar+"."))
+}else if(comidas == "lomito"){
+    let totalAPagar = precioBebidas + 1600;
+    console.log(alert("El total a pagar con la bebida es: $"+totalAPagar+"."))
+}else if(comidas == "papas fritas"){
+    let totalAPagar = precioBebidas + 600;
+    console.log(alert("El total a pagar con la bebida es: $"+totalAPagar+"."))
+}else if(comidas == "chocotorta"){
+    let totalAPagar = precioBebidas + 600;
+    console.log(alert("El total a pagar con la bebida es: $"+totalAPagar+"."))
 }
-
-alert("El total a pagar es: " + acumulador)
