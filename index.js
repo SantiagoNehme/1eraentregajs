@@ -54,3 +54,13 @@ if(comidas == "hamburgesa"){
     let totalAPagar = precioBebidas + 600;
     console.log(alert("El total a pagar con la bebida es: $"+totalAPagar+"."))
 }
+
+const metodosDePago = [{id:1,  metodo: "Efectivo"},
+                       {id: 2, metodo: "Tarjeta de débito"},
+                       {id: 3, metodo: "Tarjeta de crédito"},
+                       {id: 4, metodo: "Transferencia bancaria"}
+]
+
+const listaDePagos = metodosDePago.map(metodo => metodo.metodo)
+
+console.log(listaDePagos);
