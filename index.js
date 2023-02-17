@@ -19,12 +19,13 @@ class Bebida{
     constructor(nombre, cantidad){
         this.nombre = nombre;
         this.cantidad = cantidad;
+        this.precio = 300;
     }
 }
 const listaDeBebidasEncargadas = [];
 let opcion = prompt("Quiere comprar algo para tomar? en caso contrario escriba NO para salir");
 
-while(opcion != "NO"){
+if(opcion != "no"){
     const nombre = prompt("Ingrese nombre");
     
     const cantidad = parseInt(prompt("Ingrese el stock"));
@@ -33,7 +34,10 @@ while(opcion != "NO"){
     
     listaDeBebidasEncargadas.push(Bebida);
     opcion = prompt("Ingrese otra Bebida o NO para salir");
+}else{
+    console.log("No pidió bebidas")
 }
+
 
 console.log(alert("Las bebidas cuestan $300") + listaDeBebidasEncargadas);
 
